@@ -2,7 +2,8 @@
 #include "IObject.h"
 #include "Engine.h"
 
-IObject::IObject()
+IObject::IObject(Vector _pos)
+	: pos(_pos)
 {
 }
 

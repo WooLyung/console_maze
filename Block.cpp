@@ -1,6 +1,7 @@
 #include "Block.h"
 
-Block::Block()
+Block::Block(Vector _pos)
+	: IObject(_pos)
 {
 }
 
@@ -15,5 +16,5 @@ void Block::Update()
 
 void Block::Render()
 {
-
+	
 }

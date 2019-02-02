@@ -8,10 +8,10 @@ class Line :
 {
 
 public:
-	Line(Vector, Vector);
+	Line(Vector, Vector, Color color);
 	~Line();
 
-	Vector point[2];
+	Vector point1, point2;
 	Color color;
 };
 

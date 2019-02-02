@@ -5,7 +5,7 @@
 class IObject
 {
 public:
-	IObject();
+	IObject(Vector _pos);
 	~IObject();
 
 	virtual void Update() = 0;

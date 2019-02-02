@@ -1,10 +1,16 @@
 #pragma once
+#include "Vector.h"
+
 class Matrix
 {
 public:
-	Matrix();
+	Matrix(float*);
 	~Matrix();
 
-	float item[16];
+	const Matrix operator*(const Matrix &matrix);
+	static const Matrix GetRotationMatrix(const Vector &axis, float angle);
+	static const Matrix GetRotationMatrix3Axis(float angleX, float angleY, float angleZ);
+
+	float item[9];
 };
 

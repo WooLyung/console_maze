@@ -6,7 +6,7 @@ class Block :
 	public IObject
 {
 public:
-	Block();
+	Block(Vector _pos);
 	~Block();
 
 	void Update();

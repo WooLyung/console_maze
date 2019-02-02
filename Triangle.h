@@ -7,9 +7,9 @@ class Triangle :
 	public IPolygon
 {
 public:
-	Triangle(Vector, Vector, Vector);
+	Triangle(Vector, Vector, Vector, Color color);
 	~Triangle();
 
-	Vector point[3];
+	Vector point1, point2, point3;
 	Color color;
 };

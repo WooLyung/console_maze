@@ -1,10 +1,8 @@
 #include "Triangle.h"
 
-Triangle::Triangle(Vector vec1, Vector vec2, Vector vec3)
+Triangle::Triangle(Vector vec1, Vector vec2, Vector vec3, Color color_)
+	: IPolygon(), point1(vec1), point2(vec2), point3(vec3), color(color_)
 {
-	point[0] = vec1;
-	point[1] = vec2;
-	point[2] = vec3;
 }
 
 Triangle::~Triangle()
