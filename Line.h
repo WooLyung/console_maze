@@ -10,6 +10,7 @@ class Line :
 public:
 	Line(Vector, Vector, Color color);
 	~Line();
+	int Dimension();
 
 	Vector point1, point2;
 	Color color;

@@ -8,3 +8,8 @@ Line::Line(Vector vec1, Vector vec2, Color color_)
 Line::~Line()
 {
 }
+
+int Line::Dimension()
+{
+	return 3;
+}

@@ -10,8 +10,3 @@ IObject::IObject(Vector _pos)
 IObject::~IObject()
 {
 }
-
-void IObject::PushPolygon(IPolygon pol)
-{
-	Engine::instance->renderList.push_back(&pol);
-}

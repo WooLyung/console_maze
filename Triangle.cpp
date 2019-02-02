@@ -8,3 +8,8 @@ Triangle::Triangle(Vector vec1, Vector vec2, Vector vec3, Color color_)
 Triangle::~Triangle()
 {
 }
+
+int Triangle::Dimension()
+{
+	return 3;
+}

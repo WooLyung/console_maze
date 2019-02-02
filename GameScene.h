@@ -5,7 +5,7 @@ class GameScene
 	: public IScene
 {
 public:
-	GameScene();
+	GameScene(Camera* cam_);
 	~GameScene();
 
 	void Update();

@@ -9,6 +9,7 @@ class Triangle :
 public:
 	Triangle(Vector, Vector, Vector, Color color);
 	~Triangle();
+	int Dimension();
 
 	Vector point1, point2, point3;
 	Color color;

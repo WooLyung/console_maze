@@ -1,4 +1,5 @@
 #include "Matrix.h"
+#include "Vector.h"
 
 Matrix::Matrix(float* item)
 {

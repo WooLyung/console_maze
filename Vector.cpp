@@ -12,12 +12,12 @@ Vector::~Vector()
 {
 }
 
-Vector Vector::operator+(Vector &vec)
+Vector Vector::operator+(Vector vec)
 {
 	return Vector(this->x + vec.x, this->y + vec.y, this->z + vec.z);
 }
 
-Vector Vector::operator-(Vector &vec)
+Vector Vector::operator-(Vector vec)
 {
 	return Vector(this->x - vec.x, this->y - vec.y, this->z - vec.z);
 }
@@ -52,12 +52,12 @@ Vector Vector::PseudoCrossProduct()
 	return Vector(-y, x, z);
 }
 
-float Vector::InnerProduct(Vector &vec1, Vector &vec2)
+float Vector::InnerProduct(Vector vec1, Vector vec2)
 {
 	return vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z;
 }
 
-Vector Vector::CrossProduct(Vector &vec1, Vector &vec2)
+Vector Vector::CrossProduct(Vector vec1, Vector vec2)
 {
 	return Vector(vec2.z - vec1.z * vec2.y, vec1.z * vec2.x - vec1.x * vec2.z, vec1.x * vec2.y - vec1.y * vec2.x);
 }

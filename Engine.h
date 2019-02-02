@@ -12,6 +12,7 @@ public:
 	void Update();
 	void Render();
 	void Clear();
+	static void PushPolygon(IPolygon* pol);
 
 	IScene* nowScene;
 	vector<IPolygon*> renderList;

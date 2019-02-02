@@ -67,6 +67,12 @@
     <Filter Include="소스 파일\Game\Object\Block">
       <UniqueIdentifier>{c42875dd-58f7-4627-ba03-f07354003cda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\Object\Camera">
+      <UniqueIdentifier>{322b54ab-388c-4e9f-a636-30c5df079b52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util">
+      <UniqueIdentifier>{3f6e8d36-a756-4a86-9e90-24d634d818b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,6 +111,12 @@
     <ClCompile Include="Block.cpp">
       <Filter>소스 파일\Game\Object\Block</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일\Game\Object\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IScene.h">
@@ -139,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>소스 파일\Game\Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>소스 파일\Game\Object\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>소스 파일\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
