@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{c7075dea-28b5-41ef-bb70-ba048d418c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Scene">
+      <UniqueIdentifier>{b2a1f6df-ec02-44b2-aa7b-e7c5e459fe13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Scene\GameScene">
+      <UniqueIdentifier>{24f144c9-f37d-4859-9747-648b707c36e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon">
+      <UniqueIdentifier>{54c02002-53b8-45e1-83db-76abc9732b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon\2D">
+      <UniqueIdentifier>{a7cfeb22-4271-41e7-a2f5-4c4f9e50be6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon\2D\Text">
+      <UniqueIdentifier>{42d6ae8c-9124-4b3e-9815-ed948072637f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon\2D\Rectangle">
+      <UniqueIdentifier>{bdc091d3-3118-4fcb-b8a5-665b6f366cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon\3D">
+      <UniqueIdentifier>{ebdf30bc-b63f-40e2-9ddc-a80b51c129ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon\3D\Triangle">
+      <UniqueIdentifier>{2a7c2242-33c9-40e7-8363-8e7538cd420f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Polygon\3D\Line">
+      <UniqueIdentifier>{e7742faa-e779-433c-b6fe-cff2bfddcba8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Object">
+      <UniqueIdentifier>{d9733dd1-3981-4423-b0c2-355633394e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Main">
+      <UniqueIdentifier>{57619d79-19d7-44cd-be1c-ca51ce6eb504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Main\pch">
+      <UniqueIdentifier>{8301e77a-6ad5-4b1b-b996-10383a5f1745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Main\Engine">
+      <UniqueIdentifier>{37fe11c4-6eca-4498-a3c4-0a566113bd9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Math">
+      <UniqueIdentifier>{e2d16435-ae19-40a1-a790-b8142c6cb7f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Math\Vector">
+      <UniqueIdentifier>{c79725cc-12f0-4cf3-82a0-132e94912ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Math\Matrix">
+      <UniqueIdentifier>{6126f603-a2e7-4d11-b9ca-89a3ba425832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Object\Block">
+      <UniqueIdentifier>{c42875dd-58f7-4627-ba03-f07354003cda}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\Game\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="IScene.cpp">
+      <Filter>소스 파일\Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="IObject.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일\Game\Main\pch</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>소스 파일\Game\Main\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>소스 파일\Game\Scene\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>소스 파일\Math\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>소스 파일\Math\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="IPolygon.cpp">
+      <Filter>소스 파일\Game\Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>소스 파일\Game\Polygon\3D\Triangle</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>소스 파일\Game\Polygon\3D\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>소스 파일\Game\Object\Block</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IScene.h">
+      <Filter>소스 파일\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="IObject.h">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>소스 파일\Game\Main\pch</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>소스 파일\Game\Main\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>소스 파일\Game\Scene\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>소스 파일\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>소스 파일\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="IPolygon.h">
+      <Filter>소스 파일\Game\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>소스 파일\Game\Polygon\3D\Triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>소스 파일\Game\Polygon\3D\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>소스 파일\Game\Object\Block</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
