@@ -13,6 +13,6 @@ public:
 	static void SetSize(int x, int y);
 	static void ReName(const char*);
 
-	const static int width = 300, height = 150;
+	const static int width = 200, height = 100;
 };
 

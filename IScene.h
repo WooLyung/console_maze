@@ -13,6 +13,7 @@ public:
 
 	void Update();
 	void Render();
+	virtual const char* SceneName() = 0;
 
 	vector<IObject*>* objectList;
 	Camera* cam;

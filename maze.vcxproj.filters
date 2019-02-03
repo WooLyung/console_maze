@@ -73,6 +73,9 @@
     <Filter Include="소스 파일\Util">
       <UniqueIdentifier>{3f6e8d36-a756-4a86-9e90-24d634d818b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\Object\Player">
+      <UniqueIdentifier>{fd39e672-d868-4b98-99f0-0105413b8401}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -117,6 +120,9 @@
     <ClCompile Include="Window.cpp">
       <Filter>소스 파일\Util</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Game\Object\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IScene.h">
@@ -157,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\Game\Object\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

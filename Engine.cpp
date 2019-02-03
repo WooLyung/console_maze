@@ -1,4 +1,5 @@
 #include <ctime>
+#include <conio.h>
 #include "pch.h"
 #include "Engine.h"
 #include "Window.h"
@@ -18,6 +19,10 @@ Engine::Engine()
 	{
 		renderBuffer[i] = new RenderBuffer[Window::height];
 		lastRenderBuffer[i] = new RenderBuffer[Window::height];
+		for (int j = 0; j < Window::height; j++)
+		{
+			lastRenderBuffer[i][j].color = LightBlue;
+		}
 	}
 }
 
@@ -25,15 +30,18 @@ Engine::~Engine()
 {
 	for (int i = 0; i < Window::width; i++)
 	{
-		free(renderBuffer[i]);
+		delete[] renderBuffer[i];
+		delete[] lastRenderBuffer[i];
 	}
-	free(renderBuffer);
+	delete[] renderBuffer;
+	delete[] lastRenderBuffer;
 }
 
 void Engine::Update()
 {
 	nowScene->Update();
 	DeltaTimeUpdate();
+	KeyUpdate();
 }
 
 void Engine::Render()
@@ -73,9 +81,9 @@ void Engine::PolygonRender()
 
 		if (triangle != nullptr)
 		{
-			Vector pos1 = Vector(triangle->point1.x / (triangle->point1.y / 100), triangle->point1.y, triangle->point1.z / (triangle->point1.y / 100)) + Vector(Window::width / 2, 0, Window::height / 2);
-			Vector pos2 = Vector(triangle->point2.x / (triangle->point2.y / 100), triangle->point2.y, triangle->point2.z / (triangle->point2.y / 100)) + Vector(Window::width / 2, 0, Window::height / 2);
-			Vector pos3 = Vector(triangle->point3.x / (triangle->point3.y / 100), triangle->point3.y, triangle->point3.z / (triangle->point3.y / 100)) + Vector(Window::width / 2, 0, Window::height / 2);
+			Vector pos1 = Vector(triangle->point1.x / (triangle->point1.y / 50), triangle->point1.y, triangle->point1.z / (triangle->point1.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			Vector pos2 = Vector(triangle->point2.x / (triangle->point2.y / 50), triangle->point2.y, triangle->point2.z / (triangle->point2.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			Vector pos3 = Vector(triangle->point3.x / (triangle->point3.y / 50), triangle->point3.y, triangle->point3.z / (triangle->point3.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
 
 			Vector Max(max(max(pos1.x, pos2.x), pos3.x), 0, max(max(pos1.z, pos2.z), pos3.z));
 			Vector Min(min(min(pos1.x, pos2.x), pos3.x), 0, min(min(pos1.z, pos2.z), pos3.z));
@@ -141,4 +149,37 @@ void Engine::PolygonRender()
 void Engine::PushPolygon(IPolygon* pol)
 {
 	Engine::instance->renderList.push_back(pol);
+}
+
+void Engine::KeyUpdate()
+{
+	int key;
+	if (_kbhit()) key = _getch();
+	else key = 0;
+
+	for (int i = 0; i < 128; i++)
+	{
+		if (keyState[i] == None || keyState[i] == Exit)
+		{
+			if (key == i)
+			{
+				keyState[i] = Enter;
+			}
+			else
+			{
+				keyState[i] = None;
+			}
+		}
+		else if (keyState[i] == Enter || keyState[i] == Stay)
+		{
+			if (key == i)
+			{
+				keyState[i] = Stay;
+			}
+			else
+			{
+				keyState[i] = Exit;
+			}
+		}
+	}
 }

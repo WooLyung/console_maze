@@ -2,14 +2,15 @@
 #include "IObject.h"
 #include "pch.h"
 
-class Block :
+class Player :
 	public IObject
 {
 public:
-	Block(Vector _pos);
-	~Block();
+	Player(Vector _pos);
+	~Player();
 
 	void Update();
 	void Render();
-};
 
+	float rot;
+};

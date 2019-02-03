@@ -1,6 +1,7 @@
 #include "Camera.h"
 #include "Engine.h"
 #include "pch.h"
+#include "GameScene.h"
 
 Camera::Camera(Vector pos_, Vector angle_)
 	: pos(pos_), angle(angle_)
@@ -13,5 +14,12 @@ Camera::~Camera()
 
 void Camera::Update()
 {
-	angle.y += Engine::instance->deltaTime * PI / 30;
+	GameScene* gameScene = dynamic_cast<GameScene*>(Engine::instance->nowScene);
+
+	if (gameScene != nullptr)
+	{
+		pos.x = gameScene->player->pos.x;
+		pos.y = gameScene->player->pos.y;
+		angle.y = gameScene->player->rot;
+	}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "IScene.h"
+#include "Player.h"
 
 class GameScene
 	: public IScene
@@ -10,4 +11,7 @@ public:
 
 	void Update();
 	void Render();
+	const char* SceneName();
+
+	Player *player;
 };

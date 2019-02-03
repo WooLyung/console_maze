@@ -24,13 +24,14 @@ public:
 	RenderBuffer** renderBuffer;
 	RenderBuffer** lastRenderBuffer;
 	double deltaTime = 0;
+	int keyState[128];
 
 	static Engine* instance;
 
 private:
 	void DeltaTimeUpdate();
 	void PolygonRender();
+	void KeyUpdate();
 
 	int leftTime = 0;
 };
-
