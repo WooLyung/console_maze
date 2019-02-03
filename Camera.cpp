@@ -13,7 +13,5 @@ Camera::~Camera()
 
 void Camera::Update()
 {
-	angle.x += Engine::instance->deltaTime * PI / 30;
-	angle.y += Engine::instance->deltaTime * PI / 25;
-	angle.z += Engine::instance->deltaTime * PI / 23;
+	angle.y += Engine::instance->deltaTime * PI / 30;
 }

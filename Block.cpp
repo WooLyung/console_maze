@@ -22,16 +22,16 @@ void Block::Render()
 	Triangle* triangles[12] = {
 		new Triangle(Vector(-50, -50, -50) + pos, Vector(50, -50, -50) + pos, Vector(-50, 50, -50) + pos, DarkGreen),
 		new Triangle(Vector(50, 50, -50) + pos, Vector(50, -50, -50) + pos, Vector(-50, 50, -50) + pos, DarkGreen),
-		new Triangle(Vector(-50, -50, 50) + pos, Vector(50, -50, 50) + pos, Vector(-50, 50, 50) + pos, DarkGreen),
-		new Triangle(Vector(50, 50, 50) + pos, Vector(50, -50, 50) + pos, Vector(-50, 50, 50) + pos, DarkGreen),
-		new Triangle(Vector(-50, -50, -50) + pos, Vector(50, -50, -50) + pos, Vector(-50, -50, 50) + pos, DarkGreen),
-		new Triangle(Vector(50, -50, 50) + pos, Vector(50, -50, -50) + pos, Vector(-50, -50, 50) + pos, DarkGreen),
-		new Triangle(Vector(50, -50, -50) + pos, Vector(50, -50, 50) + pos, Vector(50, 50, 50) + pos, DarkGreen),
-		new Triangle(Vector(50, -50, -50) + pos, Vector(50, 50, -50) + pos, Vector(50, 50, 50) + pos, DarkGreen),
-		new Triangle(Vector(50, 50, 50) + pos, Vector(-50, 50, 50) + pos, Vector(-50, 50, -50) + pos, DarkGreen),
-		new Triangle(Vector(50, 50, 50) + pos, Vector(50, 50, -50) + pos, Vector(-50, 50, -50) + pos, DarkGreen),
-		new Triangle(Vector(-50, -50, -50) + pos, Vector(-50, -50, 50) + pos, Vector(-50, 50, 50) + pos, DarkGreen),
-		new Triangle(Vector(-50, -50, -50) + pos, Vector(-50, 50, -50) + pos, Vector(-50, 50, 50) + pos, DarkGreen)
+		new Triangle(Vector(-50, -50, 50) + pos, Vector(50, -50, 50) + pos, Vector(-50, 50, 50) + pos, DarkYellow),
+		new Triangle(Vector(50, 50, 50) + pos, Vector(50, -50, 50) + pos, Vector(-50, 50, 50) + pos, DarkYellow),
+		new Triangle(Vector(-50, -50, -50) + pos, Vector(50, -50, -50) + pos, Vector(-50, -50, 50) + pos, DarkRed),
+		new Triangle(Vector(50, -50, 50) + pos, Vector(50, -50, -50) + pos, Vector(-50, -50, 50) + pos, DarkRed),
+		new Triangle(Vector(50, -50, -50) + pos, Vector(50, -50, 50) + pos, Vector(50, 50, 50) + pos, DarkBlue),
+		new Triangle(Vector(50, -50, -50) + pos, Vector(50, 50, -50) + pos, Vector(50, 50, 50) + pos, DarkBlue),
+		new Triangle(Vector(50, 50, 50) + pos, Vector(-50, 50, 50) + pos, Vector(-50, 50, -50) + pos, Purple),
+		new Triangle(Vector(50, 50, 50) + pos, Vector(50, 50, -50) + pos, Vector(-50, 50, -50) + pos, Purple),
+		new Triangle(Vector(-50, -50, -50) + pos, Vector(-50, -50, 50) + pos, Vector(-50, 50, 50) + pos, Gray),
+		new Triangle(Vector(-50, -50, -50) + pos, Vector(-50, 50, -50) + pos, Vector(-50, 50, 50) + pos, Gray)
 	};
 	for (int i = 0; i < 12; i++)
 	{
