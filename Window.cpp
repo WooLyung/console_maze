@@ -1,3 +1,4 @@
+#include <cstdio>
 #include "Window.h"
 using namespace std::string_literals;
 
@@ -18,13 +19,18 @@ void Window::Goto(int x, int y)
 	}
 }
 
-void Window::Draw(int x, int y, Color color)
+void Window::Draw(Color color)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color * 17);
+	printf_s("  ");
+}
+
+void Window::GotoDraw(int x, int y, Color color)
 {
 	if (x >= 0 && x <= width - 1 && y >= 0 && y <= height - 1)
 	{
 		Goto(x, y);
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color * 17);
-		std::cout << "  ";
+		Draw(color);
 	}
 }
 

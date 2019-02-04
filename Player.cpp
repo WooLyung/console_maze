@@ -15,21 +15,23 @@ Player::~Player()
 
 void Player::Update()
 {
-	if (Engine::instance->keyState['w'])
+	if (Engine::instance->keyState['w'] == Enter || Engine::instance->keyState['w'] == Stay)
 	{
-		pos.y += Engine::instance->deltaTime * 40;
+		pos.x += Engine::instance->deltaTime * 80 * sin(Engine::instance->nowScene->cam->angle.z);
+		pos.y += Engine::instance->deltaTime * 80 * cos(Engine::instance->nowScene->cam->angle.z);
 	}
-	if (Engine::instance->keyState['s'])
+	if (Engine::instance->keyState['s'] == Enter || Engine::instance->keyState['s'] == Stay)
 	{
-		pos.y -= Engine::instance->deltaTime * 40;
+		pos.x -= Engine::instance->deltaTime * 80 * sin(Engine::instance->nowScene->cam->angle.z);
+		pos.y -= Engine::instance->deltaTime * 80 * cos(Engine::instance->nowScene->cam->angle.z);
 	}
-	if (Engine::instance->keyState['a'])
+	if (Engine::instance->keyState['a'] == Enter || Engine::instance->keyState['a'] == Stay)
 	{
-		pos.x += Engine::instance->deltaTime * 40;
+		rot += Engine::instance->deltaTime * PI / 6;
 	}
-	if (Engine::instance->keyState['d'])
+	if (Engine::instance->keyState['d'] == Enter || Engine::instance->keyState['d'] == Stay)
 	{
-		pos.x -= Engine::instance->deltaTime * 40;
+		rot -= Engine::instance->deltaTime * PI / 6;
 	}
 }
 

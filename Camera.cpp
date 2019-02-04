@@ -20,6 +20,6 @@ void Camera::Update()
 	{
 		pos.x = gameScene->player->pos.x;
 		pos.y = gameScene->player->pos.y;
-		angle.y = gameScene->player->rot;
+		angle.z = gameScene->player->rot;
 	}
 }

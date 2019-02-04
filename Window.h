@@ -9,7 +9,8 @@ public:
 	~Window();
 
 	static void Goto(int x, int y);
-	static void Draw(int x, int y, Color color);
+	static void Draw(Color color);
+	static void GotoDraw(int x, int y, Color color);
 	static void SetSize(int x, int y);
 	static void ReName(const char*);
 

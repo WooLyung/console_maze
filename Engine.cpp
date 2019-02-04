@@ -81,9 +81,22 @@ void Engine::PolygonRender()
 
 		if (triangle != nullptr)
 		{
-			Vector pos1 = Vector(triangle->point1.x / (triangle->point1.y / 50), triangle->point1.y, triangle->point1.z / (triangle->point1.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
-			Vector pos2 = Vector(triangle->point2.x / (triangle->point2.y / 50), triangle->point2.y, triangle->point2.z / (triangle->point2.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
-			Vector pos3 = Vector(triangle->point3.x / (triangle->point3.y / 50), triangle->point3.y, triangle->point3.z / (triangle->point3.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			Vector pos1(0, 0, 0), pos2(0, 0, 0), pos3(0, 0, 0);
+
+			if (triangle->point1.y < 0)
+				pos1 = Vector(triangle->point1.x / (triangle->point1.y / 50), triangle->point1.y, triangle->point1.z / (triangle->point1.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			else if (triangle->point1.y > 0)
+				pos1 = Vector(triangle->point1.x * -(triangle->point1.y * 50), triangle->point1.y, triangle->point1.z * -(triangle->point1.y * 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			
+			if (triangle->point2.y < 0)
+				pos2 = Vector(triangle->point2.x / (triangle->point2.y / 50), triangle->point2.y, triangle->point2.z / (triangle->point2.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			else if (triangle->point2.y > 0)
+				pos2 = Vector(triangle->point2.x * -(triangle->point2.y * 50), triangle->point2.y, triangle->point2.z * -(triangle->point2.y * 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+
+			if (triangle->point3.y < 0)
+				pos3 = Vector(triangle->point3.x / (triangle->point3.y / 50), triangle->point3.y, triangle->point3.z / (triangle->point3.y / 50)) + Vector(Window::width / 2, 0, Window::height / 2);
+			else if (triangle->point3.y > 0)
+				pos3 = Vector(triangle->point3.x * -(triangle->point3.y * 50), triangle->point3.y, triangle->point3.z * -(triangle->point3.y * 50)) + Vector(Window::width / 2, 0, Window::height / 2);
 
 			Vector Max(max(max(pos1.x, pos2.x), pos3.x), 0, max(max(pos1.z, pos2.z), pos3.z));
 			Vector Min(min(min(pos1.x, pos2.x), pos3.x), 0, min(min(pos1.z, pos2.z), pos3.z));
@@ -92,8 +105,8 @@ void Engine::PolygonRender()
 			if (Max.x >= Window::width) Max.x = Window::width;
 			if (Max.z >= Window::height) Max.z = Window::height;
 
-			if (Max.x >= 0 && Max.y >= 0 && Min.x <= Window::width - 1 && Min.z <= Window::height - 1
-				&& pos1.y <= 0 && pos2.y <= 0 && pos3.y <= 0)
+			if (Max.x >= 0 && Max.z >= 0 && Min.x <= Window::width - 1 && Min.z <= Window::height - 1
+				&& (pos1.y <= 0 || pos2.y <= 0 || pos3.y <= 0))
 			{
 				for (int x = (int)Min.x; x <= (int)Max.x; x++)
 				{
@@ -133,14 +146,22 @@ void Engine::PolygonRender()
 		}
 	});
 
-	for (int x = 0; x < Window::width; x++)
+	Vector anchor(0, 0, 0);
+	for (int y = 0; y < Window::height; y++)
 	{
-		for (int y = 0; y < Window::height; y++)
+		for (int x = 0; x < Window::width; x++)
 		{
 			if (renderBuffer[x][y].color != lastRenderBuffer[x][y].color)
 			{
-				Window::Draw(x, y, renderBuffer[x][y].color);
 				lastRenderBuffer[x][y].color = renderBuffer[x][y].color;
+
+				if (anchor.y == y && anchor.x == x - 1)
+					Window::Draw(renderBuffer[x][y].color);
+				else
+					Window::GotoDraw(x, y, renderBuffer[x][y].color);
+
+				anchor.x = x + 1;
+				anchor.y = y;
 			}
 		}
 	}
